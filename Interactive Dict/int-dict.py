@@ -17,43 +17,60 @@ def translate(word):
   word = word.lower()
   wierd_w = difflib.get_close_matches(word, data)
   ranked_weird = []
+  concepts = []
 
+  # appending rank of the matches into a list
   for x in wierd_w:
-    ranked_weird.append(SequenceMatcher(None,word, x).ratio())
+    ranked_weird.append(round(SequenceMatcher(None,word, x).ratio(),2))
   
-  index_of_max = ranked_weird = index(max(ranked_weird))
+  while True:
+    if word in data.keys():
+      [concepts.append(x) for x in data[word]]
 
-  if word in data.keys():
-    return (data[word][0])
+      print('')
+      print('Your word has', len(data[word]), 'concepts. Do you want to see them all or just the first?')
+      sel_concepts = input('Reply "one", else all concepts will be shown: ')
+      print('')
 
-  else:
-    print('')
-    print('We found a good match for your word.')
-    print(wierd_w[])
-
-
-
-
-    print('Is your word in this list? ')
-    print(wierd_w)
-    print('')
-
-
-
-    print('If so press the number of your word, else type "no" ')
-    
-
-    fixed_word = input('Select a number: ')
-
-    if fixed_word.isdigit() is True:
-      fixed_word = int(fixed_word) - 1
-      return data[wierd_w[fixed_word]][0]
-
-    elif fixed_word.lower() == 'no':
-      return 'Try a different word'
+      if sel_concepts == 'one':
+        return print('Concept: ',concepts[0])
+      else:
+        for x in range(len(data[word])):
+          print('Concept ',x+1,':', concepts[x-1])
+          print('')
+        break
 
     else:
-      return 'Type a number of the list or "no"'
+      print('')
+      if len(wierd_w) == 0:
+        return 'We didnt find a decent match, try another word'
+        
+      else:
+        print('We found a good match for your word.')
+        print(wierd_w)
+        print('% of the matching words: ', ranked_weird)
+        print('')
+
+        print('Is your word in this list? If so select a number in the range 1 -', len(wierd_w), '. Else type "no"')
+        fixed_word = input()
+
+        if fixed_word.isdigit() is True:
+          fixed_word = int(fixed_word) - 1
+
+          if len(wierd_w) >= fixed_word + 1:
+            return print(wierd_w[fixed_word], ':', data[wierd_w[fixed_word]])
+
+          elif len(wierd_w) < fixed_word + 1:
+            print ('Number out of range')
+
+          else:
+            return 'Didnt type any number'
+
+        elif fixed_word.lower() == 'no':
+          return 'Try a different word'
+
+        else:
+          print('Type a correct number')
 
 
 print(translate(word))

@@ -15,7 +15,7 @@ word = input('Enter word: ' )
 # defining function that returns definition of word if exists
 def translate(word):
   word = word.lower()
-  wierd_w = difflib.get_close_matches(word, data)
+  wierd_w = get_close_matches(word, data.keys())
   ranked_weird = []
   concepts = []
 
@@ -74,3 +74,4 @@ def translate(word):
 
 
 print(translate(word))
+# one thing that can be improved is implementing the same distribution of the concepts (in case there's more than one) when the program doesn't find the word in the keys.

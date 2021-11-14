@@ -1,0 +1,20 @@
+<tr>
+<td class="visible-xs">
+<a class="node-address" href="/nodes/46.8.171.139-8333/" title="Node status">46.8.171.139:8333</a>
+<br/>
+<span class="text-muted">Since 5 days, 6 hours ago</span><br/>
+<span>/Satoshi:0.21.1/</span><br/>
+<span class="text-muted">NODE_WITNESS, NODE_NETWORK_LIMITED (1032)</span><br/>
+<span>709593</span><br/>
+<span class="text-muted">Marbella, Spain</span>
+<br/><span class="text-muted">Europe/Madrid</span>
+<br/>
+<span>Olivenet Network S.L.</span>
+<br/><span class="text-muted">AS201746</span>
+</td>
+<td class="hidden-xs"><a href="/nodes/46.8.171.139-8333/" title="Node status">46.8.171.139:8333</a><br/><span class="text-muted">Since 5 days, 6 hours ago</span></td>
+<td class="hidden-xs">/Satoshi:0.21.1/ (70016)<br/><span class="text-muted">NODE_WITNESS, NODE_NETWORK_LIMITED (1032)</span></td>
+<td class="hidden-xs">709593<div class="progress"><div class="progress-bar fill" style="width: 100.00%;"></div></div></td>
+<td class="hidden-xs">Marbella, Spain<br/><span class="text-muted">Europe/Madrid</span></td>
+<td class="hidden-xs">Olivenet Network S.L.<br/><span class="text-muted">AS201746</span></td>
+</tr>
